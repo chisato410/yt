@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube メモプレイヤー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="body-wrap">
+      <div id="player"></div>
+
+      <nav>
+        <ul class="btns">
+          <li id="doplay">再生</li>
+          <li id="dostop">停止</li>
+          <li id="dopause">一時停止</li>
+          <li id="mute">ミュート</li>
+          <li id="do10sNext">10秒先へ</li>
+          <li id="do10sPrev">10秒戻る</li>
+        </ul>
+
+        <ul>
+          <li>
+            <select id="MovieId" class="ytMovie" name="ytMovie">
+              <option selected>選択してください。</option>
+              <option value="mh1p8_AuCNc">家主のテーマ 家主</option>
+              <option value="tr_GRQtQyPM">びりびりしびれる ドミコ</option>
+              <option value="mKUhq7SYouA">空洞です ゆらゆら帝国</option>
+              <option value="XbfGem5GN7M">のめりこめ、震えろ。 Tempalay</option>
+            </select>
+          </li>
+          <li class="speed">
+            <p>再生速度を選択してください。</p>
+            <form id="doSpeed">
+              <input type="radio" id="mslow" name="speed" value="0.25" />
+              <label for="mslow">0.25</label>
+              <input type="radio" id="slow" name="speed" value="0.5" />
+              <label for="slow">0.5</label>
+              <input
+                type="radio"
+                id="normal"
+                name="speed"
+                value="1.0"
+                checked
+              />
+              <label for="normal">1</label>
+              <input type="radio" id="hspeed" name="speed" value="1.5" />
+              <label for="hspeed">1.5</label>
+              <input type="radio" id="mhspeed" name="speed" value="2" />
+              <label for="mhspeed">2</label>
+            </form>
+          </li>
+        </ul>
+
+        <label class="volume">
+          ボリューム
+          <input
+            type="range"
+            min="0"
+            max="100"
+            name="volume"
+            id="volume"
+            value="50"
+          />
+          <span id="volumeNum"></span>
+        </label>
+      </nav>
+
+      <div class="memo">
+        <h3>メモを追加</h3>
+        <textarea
+          id="memoText"
+          rows="2"
+          cols="50"
+          placeholder="このタイミングでのメモを書く..."
+        ></textarea
+        ><br />
+        <button id="addMemo">＋ メモを追加</button>
+        <h3 class="memoList">メモ一覧</h3>
+        <ul id="memoList"></ul>
+      </div>
+    </div>
+
+    <!-- YouTube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- メインスクリプト -->
+    <script src="main.js" de></script>
+  </body>
+</html>

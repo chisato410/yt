@@ -1,0 +1,160 @@
+/* 全体のリセット */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.body-wrap {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#player {
+  width: 100%;
+  height: 360px;
+  background-color: #000;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 検索フォーム */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="search"] {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button#searchBtn {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button#searchBtn:hover {
+  background-color: #005fa3;
+}
+
+/* プレイヤー操作ボタン */
+nav {
+  margin: 20px 0;
+}
+
+ul.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+ul.btns li {
+  background-color: #eee;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+ul.btns li:hover {
+  background-color: #ccc;
+}
+
+/* 再生速度・セレクト */
+select.ytMovie {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.speed {
+  margin-top: 10px;
+}
+
+.speed p {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.speed label {
+  margin-right: 10px;
+}
+
+/* ボリューム */
+.volume {
+  display: block;
+  margin-top: 15px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* メモセクション */
+.memo {
+  margin-top: 30px;
+}
+
+.memo h3 {
+  margin-bottom: 10px;
+}
+
+textarea#memoText {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+button#addMemo {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button#addMemo:hover {
+  background-color: #1e7e34;
+}
+
+ul#memoList {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+ul#memoList li {
+  margin-bottom: 6px;
+}
