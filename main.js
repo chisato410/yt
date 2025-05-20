@@ -3,14 +3,14 @@ let youtubeId = "ozbgCyMdciU";
 
 // 設定
 const DEFAULT_VOLUME = 5;
-const YT_API_KEY = "AIzaSyC-qvW8IurfpIjs9L7_kXVEGGXJWLWLcq4"; // ← 差し替え推奨
+const YT_API_KEY = "AIzaSyC-qvW8IurfpIjs9L7_kXVEGGXJWLWLcq4"; // ← セキュリティ的には.envで管理が望ましい
 const searchList = document.querySelector(".searchlist");
 const volumeInput = document.querySelector("#volume");
 const volumeNum = document.querySelector("#volumeNum");
 const memoText = document.querySelector("#memoText");
 const memoList = document.querySelector("#memoList");
 
-// ---------- YouTube API ---------- //
+// ---------- YouTube IFrame API 初期化 ---------- //
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     height: "360",
@@ -32,6 +32,7 @@ const onPlayerReady = (event) => {
   renderMemos();
 };
 
+// ---------- プレイヤー操作 ---------- //
 const playVideo = () => player.playVideo();
 const pauseVideo = () => player.pauseVideo();
 const stopVideo = () => player.stopVideo();
@@ -63,9 +64,8 @@ const updateVolumeDisplay = (vol) => {
 
 const changeVideo = (videoId) => {
   youtubeId = videoId;
-  player.destroy();
-  player = null;
-  onYouTubeIframeAPIReady(); // onReady内で renderMemos() 実行
+  player.loadVideoById(videoId); // より軽量に切り替え
+  renderMemos(); // 動画切り替え時にメモを再描画
 };
 
 const changePlaybackRate = (rate) => {
@@ -73,7 +73,7 @@ const changePlaybackRate = (rate) => {
   player.playVideo();
 };
 
-// ---------- メモ関連 ---------- //
+// ---------- メモ管理 ---------- //
 const getMemoKey = () => `youtube_memo_${youtubeId}`;
 const loadMemos = () => JSON.parse(localStorage.getItem(getMemoKey())) || [];
 
@@ -86,7 +86,6 @@ const saveMemo = (time, text) => {
 
 const renderMemos = () => {
   if (!memoList) return;
-
   memoList.innerHTML = "";
   loadMemos().forEach((memo, index) => {
     const li = document.createElement("li");
@@ -188,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ytSearch(document.querySelector("#ytSearch").value);
   });
 
-  // ← 追加：検索リストの選択変更時に動画切り替え
+  // 🔽追加：検索リストから選択されたら即座に切り替え
   searchList.addEventListener("change", (e) => {
     const selectedVideoId = e.target.value;
     if (selectedVideoId) changeVideo(selectedVideoId);
