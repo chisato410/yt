@@ -1,13 +1,10 @@
 # 🎥 YouTube メモプレイヤー
 
 特定の再生時間にメモを追加できる、YouTube プレイヤー拡張 Web アプリです。
-JavaScript の学習を目的に、YouTube IFrame Player API・イベント駆動・DOM 操作・状態管理などの基本要素を実践的に体験できます。
-
-![screenshot](./screenshot.png) <!-- スクリーンショットを追加 -->
 
 ---
 
-## 📚 このプロジェクトで学べること
+## 📚 学んだこと
 
 - JavaScript での**DOM 操作とイベント管理**
 - YouTube IFrame Player API を用いた**動画制御**
