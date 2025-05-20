@@ -30,13 +30,12 @@
 
 ## 🧰 使用技術
 
-| 項目           | 内容                                                                                    |
-| -------------- | --------------------------------------------------------------------------------------- |
-| 言語           | HTML / CSS / JavaScript (ES6)                                                           |
-| API            | [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference) |
-| ストレージ     | `window.localStorage` を利用したブラウザ内保存                                          |
-| モジュール構成 | `player.js`（再生制御）, `memo.js`（メモ管理）, `ui.js`（UI 制御）などに分割            |
-| イベント処理   | カスタムイベントと DOM イベントを活用                                                   |
-| UI 操作        | 動的に DOM を生成・更新し、状態と同期させる設計                                         |
+| 項目         | 内容                                                                                    |
+| ------------ | --------------------------------------------------------------------------------------- |
+| 言語         | HTML / CSS / JavaScript (ES6)                                                           |
+| API          | [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference) |
+| ストレージ   | `window.localStorage` を利用したブラウザ内保存                                          |
+| イベント処理 | カスタムイベントと DOM イベントを活用                                                   |
+| UI 操作      | 動的に DOM を生成・更新し、状態と同期させる設計                                         |
 
 ---
